@@ -882,15 +882,26 @@ main {
   color: #494A4A;
   margin-bottom: 17px;
 }
+.table__head-title.table__head-title--active svg {
+  transform: rotate(180deg);
+}
+.table__head-title.table__head-title--active svg path {
+  fill: #00498D;
+}
 .table__head div {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.table__head div img {
-  width: 7.5px;
+.table__head div svg {
   margin-left: 3px;
+}
+.table__head div svg:hover {
+  cursor: pointer;
+}
+.table__head div svg:hover path {
+  fill: #00498D;
 }
 .table__head div:nth-child(1) {
   width: 4.7%;
@@ -1256,6 +1267,9 @@ main {
 }
 .show__all .select li {
   justify-content: center;
+}
+.show__all .select .list {
+  top: -400%;
 }
 
 .categories {

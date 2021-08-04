@@ -29,7 +29,9 @@ $(document).ready(function() {
         }
 
     });
-    if (document.getElementById('myChart')) {
+
+
+    function doughnutDiagram() {
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -59,7 +61,9 @@ $(document).ready(function() {
                 cutout: 50
             }
         });
-    } else if (document.getElementById('myChart2')) {
+    }
+
+    function doughnutDiagram2() {
         var ctx = document.getElementById('myChart2').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'doughnut',
@@ -89,7 +93,6 @@ $(document).ready(function() {
             }
         });
     }
-
 
     function lineDiagram() {
         Chart.defaults.scale.beginAtZero = true;
@@ -132,7 +135,20 @@ $(document).ready(function() {
         })
     }
 
-    lineDiagram()
+    if (document.getElementById('myChart')) {
+        doughnutDiagram()
+    }
+    if (document.getElementById('myChart2')) {
+        doughnutDiagram2()
+    }
 
+
+    if (document.getElementById('myChart3')) {
+        lineDiagram()
+    }
+
+    $(".table__head-title").click(function() {
+        $(this).toggleClass("table__head-title--active")
+    })
 
 })
