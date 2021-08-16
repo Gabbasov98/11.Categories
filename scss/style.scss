@@ -387,6 +387,7 @@ main {
             text-align: center;
             & svg {
                 margin-left: 3px;
+                flex-shrink: 0;
                 &:hover {
                     cursor: pointer;
                     & path {
@@ -648,7 +649,7 @@ main {
             font-size: 14px;
             line-height: 17px;
             letter-spacing: 0.01em;
-            color: #A6ACBE;
+            color: #494A4A;
         }
         & strong {
             color: #494A4A;
@@ -754,7 +755,7 @@ main {
         font-size: 12px;
         line-height: 15px;
         text-align: right;
-        color: #9F9F9F;
+        color: $black-color;
     }
 }
 
@@ -773,15 +774,20 @@ main {
         width: 100%;
         background: transparent !important;
         & span {
-            opacity: 0;
-            visibility: hidden;
-            display: none;
+            background: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 16px;
+            color: #FFFFFF;
         }
         & li {
             justify-content: center;
         }
         & .list {
-            top: -400%;
+            top: -470%;
         }
     }
 }
@@ -801,12 +807,12 @@ main {
         display: flex;
         align-items: center;
         & span {
-            font-size: 12px;
-            line-height: 12px;
+            font-size: 13px;
+            line-height: 13px;
             text-align: right;
             letter-spacing: 0.01em;
             width: 88px;
-            color: #A6ACBE;
+            color: #494A4A;
             margin-right: 10px;
         }
         & strong {
@@ -953,17 +959,17 @@ main {
                 & span {
                     font-size: 12px;
                     line-height: 15px;
-                    color: #8B8B8B;
+                    color: $black-color;
                     margin-top: 7px;
                 }
             }
         }
         &>span {
             width: 130px;
-            font-size: 12px;
+            font-size: 14px;
             line-height: 15px;
             text-align: right;
-            color: #8B8B8B;
+            color: $black-color;
             flex-shrink: 0;
         }
         &>div {

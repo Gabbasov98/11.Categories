@@ -6,6 +6,82 @@ $(document).ready(function() {
     $(" .select").niceSelect()
     $(".table__rows").mCustomScrollbar();
     $(".content__right").mCustomScrollbar();
+    $('input[name="dates"]').daterangepicker({
+        autoApply: true,
+        locale: {
+            "format": "MM/DD/YYYY",
+            "separator": " - ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        }
+    });
+    $('input[name="datesright"]').daterangepicker({
+        autoApply: true,
+        "opens": "left",
+        locale: {
+            "format": "MM/DD/YYYY",
+            "separator": " - ",
+            "applyLabel": "Apply",
+            "cancelLabel": "Cancel",
+            "fromLabel": "From",
+            "toLabel": "To",
+            "customRangeLabel": "Custom",
+            "weekLabel": "W",
+            "daysOfWeek": [
+                "Вс",
+                "Пн",
+                "Вт",
+                "Ср",
+                "Чт",
+                "Пт",
+                "Сб"
+            ],
+            "monthNames": [
+                "Январь",
+                "Февраль",
+                "Март",
+                "Апрель",
+                "Май",
+                "Июнь",
+                "Июль",
+                "Август",
+                "Сентябрь",
+                "Октябрь",
+                "Ноябрь",
+                "Декабрь"
+            ],
+            "firstDay": 1
+        }
+    });
+
 
     $(".table__check input").click(function() {
         if ($(this).is(':checked')) {
@@ -18,17 +94,6 @@ $(document).ready(function() {
         $(this).addClass("datapicker__show--active")
     })
 
-    $(document).mouseup(function(e) { // событие клика по веб-документу
-        if ($(".datapicker__show").hasClass("datapicker__show--active")) {
-            var div = $(".datapicker__hidden"); // тут указываем ID элемента
-            if (!div.is(e.target) // если клик был не по нашему блоку
-                &&
-                div.has(e.target).length === 0) { // и не по его дочерним элементам
-                div.siblings(".datapicker__show").removeClass("datapicker__show--active")
-            }
-        }
-
-    });
 
 
     function doughnutDiagram() {
@@ -99,7 +164,7 @@ $(document).ready(function() {
         Chart.defaults.scale.ticks.maxRotation = 0;
         Chart.defaults.scale.ticks.backdropColor = 'rgba(159, 162, 180,1)'
             // Chart.defaults.scale.ticks.padding = 10;
-        Chart.defaults.font.size = 10;
+        Chart.defaults.font.size = 12;
         Chart.defaults.font.family = 'Proxima Nova';
         Chart.defaults.plugins.legend.display = false;
         let ctx = document.getElementById("myChart3").getContext('2d');
